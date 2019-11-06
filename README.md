@@ -1,8 +1,10 @@
-```bash
-sudo apt-get update
-# remove old version to make sure that system doesn't contain old version
-sudo apt-get remove docker docker-engine docker.io
 
-# install new docker
-sudo apt install docker.io
+## How to delete all exisitng containers/images in one comand
+
+```bash
+# delete all containers
+docker rm -vf $(docker ps -a -q)
+
+# delete all images
+docker rmi -f $(docker images -a -q)
 ```
